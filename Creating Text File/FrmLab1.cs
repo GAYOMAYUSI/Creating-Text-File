@@ -20,7 +20,17 @@ namespace Creating_Text_File
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
-          
+            FrmFileName ffn = new FrmFileName();
+            ffn.ShowDialog();
+            String getInput = txtInput.Text;
+
+            string docPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            Console.WriteLine(docPath);
+            using (StreamWriter outputFile =  new StreamWriter(Path.Combine(docPath, FrmFileName.SetFileName)))
+            {
+                outputFile.WriteLine(getInput);
+                Console.WriteLine(getInput);
+            }
         }
     }
 }

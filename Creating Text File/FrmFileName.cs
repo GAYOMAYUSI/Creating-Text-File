@@ -21,7 +21,10 @@ namespace Creating_Text_File
         private void btnOkay_Click(object sender, EventArgs e)
         {
             
-       
+           SetFileName = txtFileName.Text+".txt";
+           this.Close();
+            FrmRegistration fr = new FrmRegistration();
+            fr.ShowDialog();
         }
     }
 }
